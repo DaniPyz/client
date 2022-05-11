@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import { getAll } from './utils/api';
+import Card from './components/Card/Card';
+import Header from './components/Header/Header';
+import CardAdd from './components/CardAdd/CardAdd'
+import React, { useEffect, useState } from 'react'
 function App() {
+  useEffect(() => {
+    (async () => {
+      const logEntries = await getAll().then(res => res.data)
+    setTopics(logEntries);
+    })()
+
+
+    return () => {
+      
+    }
+  }, [])
+  const changeState = () => {
+    (async () => {
+      const logEntries = await getAll().then(res => res.data)
+      setTopics(logEntries);
+    })()
+  }
+  const [Topics, setTopics] = useState(null);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <div className="main">
+
+        {
+    
+          Topics !== null ? Topics.map(topic => <Card  {...topic} />)   : null
+        }
+        
+        <CardAdd update={changeState()} />
+      </div>
+    </>
   );
 }
 

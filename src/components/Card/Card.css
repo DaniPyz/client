@@ -1,0 +1,43 @@
+.content_block {
+  width: 280px;
+  height: 330px;
+  border-radius: 20px;
+  margin-right: 10px;
+  background-color: #f0f0f0;
+  padding: 15px;
+  align-items: center;
+  text-align: center;
+}
+.h1_title {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 8px 0 20px;
+}
+
+.p_preview {
+  height: 176px;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  font-size: 18px;
+  overflow: hidden;
+  color: #505050;
+  margin-bottom: 40px;
+}
+
+.btn {
+  font-weight: 500;
+  color: #000000;
+  font-size: 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 10px 15px;
+  background-color: #acb4fb;
+}
+
+
+
+

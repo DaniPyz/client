@@ -1,0 +1,47 @@
+.authPopUp{
+border-radius: 20px;
+  position: absolute;
+   position: absolute;
+    top: 50%;  /* position the top  edge of the element at the middle of the parent */
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+
+    transform: translate(-50%, -50%); /* This is a shorthand of
+                                         translateX(-50%) and translateY(-50%) */
+text-align: center;
+  padding: 15px 15px;
+  width: 350px;
+  height: 200px;
+  text-align: center;
+  display: inline-block;
+  background-color: #b4ffff;
+}
+h1{
+margin-bottom: 10px !important; 
+}
+input{
+  align-items: center;
+  height: 30px;
+  width: 90%;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1.5px solid black;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+input::placeholder{
+    font-family: 'Montserrat', sans-serif;
+}
+button{
+margin: 10px auto;
+  display: block;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 15px;
+  background-color: #567a7a;
+
+}
+a{
+  color: black;
+text-decoration: none;
+font-weight: 500;
+}

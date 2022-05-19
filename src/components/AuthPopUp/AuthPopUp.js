@@ -3,16 +3,22 @@ import { Link } from 'react-router-dom';
 import { register, login } from '../../utils/api';
 import './AuthPopUp.css'
 import { useNavigate } from 'react-router';
-function AuthPopUp({isLogin}) {
+import { axiosUserSignIn } from '../../redux/actions/userAction'
+import {useDispatch} from 'react-redux'
+function AuthPopUp({ isLogin }) {
+  
+  const dispatch = useDispatch();
+
   const [inputData, setInputData] = useState({
-    email:undefined,
-    password: undefined,
-    username: undefined
+    email: '',
+    password: '',
+    username: ''
   })
   let navigate = useNavigate();
-  const onLoginSubmit = async (ev) => {
-    const data = await login(inputData)
-    data ? navigate("/", { replace: true }) : console.log("Произошла ошибка")
+  const onLoginSubmit = (ev) => {
+    console.log('Запрос отправлен ')
+    dispatch(axiosUserSignIn({ username: inputData.username, password: inputData.password }))
+    navigate("/", { replace: true })
     
   }
   const onRegisterSubmit = (ev) => {

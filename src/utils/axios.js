@@ -1,9 +1,12 @@
 import axios from 'axios';
 const axiosClient = axios.create({
-  baseURL: `http://localhost:3001`,
+  baseURL: `https://client-dapy.vercel.app`,
   headers: {
     'Accept': 'application/json',
     'Content-Type': 'application/json'
-  }
+  },
+  credentials: 'same-origin'
+
 });
+axiosClient.defaults.withCredentials = true
 export default axiosClient;

@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { postTopic } from '../../utils/api'
 import './CardAdd.css'
-function CardAdd({ update }) {
+import { useSelector, useDispatch } from "react-redux";
+import { axiosPostTopic} from '../../redux/actions/topicAction'
+function CardAdd() {
   const [isVisible, setIsVisible] = useState()
   const [data, setData] = useState({
     title: '',
     content: ''
   })
+  const dispatch = useDispatch();
+
   return (
     <div className='create_block'>
 
@@ -16,8 +20,7 @@ function CardAdd({ update }) {
           <textarea className='input_p' value={data.content} placeholder='Введи основную информацию' onChange={(ev) => setData({ ...data, content: ev.target.value })}></textarea>
           <a href="s" className='btn add_btn' onClick={e => {
             e.preventDefault()
-            postTopic(data)
-            update()
+            dispatch(axiosPostTopic({ title: data.title, content: data.content}))
           }} >Добавить</a>
         </> :
           <div onClick={() => {

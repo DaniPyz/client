@@ -4,7 +4,7 @@ export const axiosGetTopics = () => {
   return (dispatch) => {
 
     axiosClient
-      .get('http://localhost:3001/api/test/user')
+      .get('https://server-dapy.vercel.app/api/test/user')
       .then(res => {
         dispatch(getTopics(res.data))
       })
@@ -16,7 +16,7 @@ export const axiosPostTopic = ({title, content}) => {
   return (dispatch) => {
 
     axiosClient
-      .post('http://localhost:3001/api/postTopic', { title, content })
+      .post('https://server-dapy.vercel.app/api/postTopic', { title, content })
       .then(res => {
 
         dispatch(axiosGetTopics())

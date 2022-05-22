@@ -27,7 +27,6 @@ export const axiosUserSignIn = ({ username, password }) => {
       .then(res => {
         dispatch(UserSignIn(res.data))
         console.log(res)
-        console.log(Cookies.set('dapy-session', res))
         // window.location.reload()
       })
       .catch(err => console.log(err))

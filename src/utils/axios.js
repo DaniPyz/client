@@ -9,8 +9,8 @@ const axiosClient = axios.create({
     'Access-Control-Allow-Headers': 'Set-Cookie'
   },
   credentials: 'same-origin',
-  crossDomain: true
-
+  crossDomain: true,
+withCredentials: true
 
 });
 export default axiosClient;

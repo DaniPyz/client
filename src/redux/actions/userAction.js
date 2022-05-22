@@ -19,14 +19,15 @@ export const axiosUserVerifySignIn = ({ token }) => {
 };
 
 export const axiosUserSignIn = ({ username, password }) => {
-  // const [cookies, setCookie] = useCookies(['name']);
+
   return (dispatch) => {
 
     axiosClient
       .post('https://history-server123123.herokuapp.com/api/auth/signin', { username, password })
       .then(res => {
         dispatch(UserSignIn(res.data))
-        console.log(res.data)
+        console.log(res)
+        console.log(Cookies.set('dapy-session', res))
         // window.location.reload()
       })
       .catch(err => console.log(err))

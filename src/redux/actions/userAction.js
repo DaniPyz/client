@@ -26,7 +26,8 @@ export const axiosUserSignIn = ({ username, password }) => {
       .post('https://history-server123123.herokuapp.com/api/auth/signin', { username, password })
       .then(res => {
         dispatch(UserSignIn(res.data))
-        window.location.reload()
+        console.log(res.data)
+        // window.location.reload()
       })
       .catch(err => console.log(err))
   }

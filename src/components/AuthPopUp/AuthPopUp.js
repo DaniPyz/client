@@ -18,7 +18,7 @@ function AuthPopUp({ isLogin }) {
   const onLoginSubmit = (ev) => {
     console.log('Запрос отправлен ')
     dispatch(axiosUserSignIn({ username: inputData.username, password: inputData.password }))
-    navigate("/", { replace: true })
+    // navigate("/", { replace: true })
     
   }
   const onRegisterSubmit = (ev) => {

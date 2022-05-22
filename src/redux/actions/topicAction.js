@@ -4,7 +4,7 @@ export const axiosGetTopics = () => {
   return (dispatch) => {
 
     axiosClient
-      .get('https://server-dapy.vercel.app/api/test/user')
+      .get('https://history-server123123.herokuapp.com/api/test/user')
       .then(res => {
         dispatch(getTopics(res.data))
       })
@@ -12,11 +12,11 @@ export const axiosGetTopics = () => {
   }
 
 };
-export const axiosPostTopic = ({title, content}) => {
+export const axiosPostTopic = ({ title, content }) => {
   return (dispatch) => {
 
     axiosClient
-      .post('https://server-dapy.vercel.app/api/postTopic', { title, content })
+      .post('https://history-server123123.herokuapp.com/api/postTopic', { title, content })
       .then(res => {
 
         dispatch(axiosGetTopics())
@@ -30,7 +30,7 @@ const getTopics = (prop) => {
   return {
     type: "GET_TOPICS",
     prop
-    
+
   }
 }
 

@@ -8,7 +8,7 @@ const axiosClient = axios.create({
     'Content-Type': 'application/json',
     'Access-Control-Allow-Headers': 'Set-Cookie'
   },
-  credentials: 'include',
+  withCredentials: true,
   crossDomain: true,
 
 });

@@ -8,9 +8,8 @@ const axiosClient = axios.create({
     'Content-Type': 'application/json',
     'Access-Control-Allow-Headers': 'Set-Cookie'
   },
-  credentials: 'include',
+  credentials: 'same-origin',
   crossDomain: true,
-  withCredentials: true
 
 });
 export default axiosClient;

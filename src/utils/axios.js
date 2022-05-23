@@ -4,9 +4,7 @@ const axiosClient = axios.create({
   headers: {
     'Accept': 'application/json',
     'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS',
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Headers': 'Set-Cookie'
   },
   withCredentials: true,
   crossDomain: true,

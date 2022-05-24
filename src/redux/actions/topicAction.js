@@ -4,7 +4,7 @@ export const axiosGetTopics = () => {
   return (dispatch) => {
 
     axiosClient
-      .get('https://history-server123123.herokuapp.com/api/test/user')
+      .get('http://178.168.81.20:3001/api/test/user')
       .then(res => {
         dispatch(getTopics(res.data))
       })
@@ -16,7 +16,7 @@ export const axiosPostTopic = ({ title, content }) => {
   return (dispatch) => {
 
     axiosClient
-      .post('https://history-server123123.herokuapp.com/api/postTopic', { title, content })
+      .post('http://178.168.81.20:3001/api/postTopic', { title, content })
       .then(res => {
 
         dispatch(axiosGetTopics())

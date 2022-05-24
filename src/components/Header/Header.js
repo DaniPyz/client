@@ -9,7 +9,9 @@ export default function Header({ userName, isLogin }) {
   const dispatch = useDispatch();
   return (
     <div className="header">
-      <h1>История</h1>
+     
+
+      <Link to={`/default`} ><h1>История</h1></Link>
       {
         isLogin ? <div className='login_name'>
           <p>{userName} </p>

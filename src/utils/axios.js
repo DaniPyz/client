@@ -1,12 +1,12 @@
 import axios from 'axios';
 const axiosClient = axios.create({
+  baseURL: `http://localhost:3000`,
   headers: {
     'Accept': 'application/json',
-    'Access-Control-Allow-Origin': 'https://history-server123123.herokuapp.com',
-    'Content-Type': 'application/json',
+    'Content-Type': 'application/json'
   },
-  withCredentials: true,
-  crossDomain: true,
+  credentials: 'same-origin'
 
 });
+axiosClient.defaults.withCredentials = true
 export default axiosClient;

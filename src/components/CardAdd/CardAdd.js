@@ -15,12 +15,15 @@ function CardAdd() {
     <div className='create_block'>
 
       {
-        isVisible ? <>
+        isVisible === true ? <>
           <input className='input_tittle' value={data.title} placeholder='Введи заголовок' onChange={(ev) => setData({ ...data, title: ev.target.value })} />
+          
           <textarea className='input_p' value={data.content} placeholder='Введи основную информацию' onChange={(ev) => setData({ ...data, content: ev.target.value })}></textarea>
           <a href="s" className='btn add_btn' onClick={e => {
             e.preventDefault()
-            dispatch(axiosPostTopic({ title: data.title, content: data.content}))
+            dispatch(axiosPostTopic({ title: data.title, content: data.content }))
+            setData({title: '', content: ''})
+          
           }} >Добавить</a>
         </> :
           <div onClick={() => {

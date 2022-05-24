@@ -1,0 +1,35 @@
+.default{
+  margin: 20px;
+  text-align: center;
+}
+
+.title1 h1{
+font-size: 40px;
+}
+.title1 p{
+  margin: 0 auto;
+font-size: 17px;
+width: 638px;
+}
+
+.main1{
+  text-align: center;
+  margin-top: 80px;
+}
+.main1 h2{
+font-size: 30px;
+font-weight: 600;
+}
+.main1 p{
+font-size: 21px;
+
+}
+img{
+  width: 400px;
+  height: 200px;
+  margin: 7px 0 7px 7px;
+  float: right;
+}
+.table{
+  margin-top: 100px;
+}
